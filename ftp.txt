@@ -1,0 +1,27 @@
+#!/bin/sh
+USER="test"
+PASS="test123"
+SERVER="IP adddress or DNS name"
+
+# Local directory to be upload *.tar.gz file
+FILE="/home"
+
+# Remote server directory to upload
+DESTDIR="/data"
+
+# Login to remote server
+#-i interative
+#-n auto authentication
+#-v verbose
+
+ftp -inv $SERVER <<EOF
+user $USER $PASS
+cd $DESTDIR
+mget testfile1.txt testfile2.txt
+quit
+
+EOF
+
+# Add mv for moving the files after downloading to move
+mv
+ 
