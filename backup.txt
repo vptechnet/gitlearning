@@ -1,0 +1,6 @@
+#!/bin/bash #!/bin/bash
+SRCD="/home/" SRCD="/home/"
+TGTD="/ TGTD="/var/backups/ /backups/“
+OF=home-$(date +%Y%m%d). OF=home-$(date +%Y%m%d).tgz
+tar -cZf $TGTD$OF $SRCD $TGTD$OF $SRCD
+exit
